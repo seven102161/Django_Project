@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Class</title>
+</head>
+
+<body>
+    <h1>这是一个投票</h1>
+
+    <table>
+    {% for question in latest_question_list %}
+        <tr><td><a href="/polls/{{ question.id }}/">{{ question.id }}</a></td><td><a href="/polls/{{ question.id }}/results/">{{ question.question_text }}</a></td></tr>
+    {% endfor %}
+    </table>
+
+</body>
+
+</html>
