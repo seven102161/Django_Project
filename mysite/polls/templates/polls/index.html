@@ -11,14 +11,13 @@
 <body>
     <h1>这是一个投票</h1>
 
-    <table>
+    <ul>
     {% for question in latest_question_list %}
-        <tr>
-            <td><a href="/polls/{{ question.id }}/">{{ question.id }}</a></td>
-            <td><a href="/polls/{{ question.id }}/results/">{{ question.question_text }}</a></td>
-        </tr>
+        <li>
+            <span><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></span>
+        </li>
     {% endfor %}
-    </table>
+    </ul>
 
 </body>
 
