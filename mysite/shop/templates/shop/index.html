@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elaine's Shop</title>
+</head>
+<body>
+    <header>
+        <h1>欢迎来到Elaine的魔法商店！</h1>
+    </header>
+
+    <hr>
+    <fieldset>
+        <legend><h1>小店商品</h1></legend>
+        <table>
+            <thead>
+                <tr>
+                    <th>名字</th><th>价格</th><th>评价</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in product_list %}
+                <tr>
+                    <td><a href="{% url 'shop:detail' product.name %}">{{ product.name }}</a></td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.grade }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        
+        </table>
+    
+    </fieldset>
+</body>
+</html>

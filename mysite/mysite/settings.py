@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [ '*' ]
 INSTALLED_APPS = [
     # customized apps
     'polls.apps.PollsConfig',
+    'shop.apps.ShopConfig',
     # original apps
     'django.contrib.admin',
     'django.contrib.auth',
