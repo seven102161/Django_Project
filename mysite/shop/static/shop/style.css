@@ -1,0 +1,9 @@
+header{
+    background-color: pink;
+    text-align: center;
+}
+
+header h1{
+    color: white;
+    padding: 5px;
+}
