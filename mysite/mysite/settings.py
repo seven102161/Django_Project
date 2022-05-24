@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # customized apps
     'polls.apps.PollsConfig',
     'shop.apps.ShopConfig',
+    'pyecharts_demo',
     # original apps
     'django.contrib.admin',
     'django.contrib.auth',
