@@ -17,7 +17,7 @@ def index(request):
         .add_yaxis("商家B", [15, 25, 16, 55, 48, 8])
         .set_global_opts(title_opts=opts.TitleOpts(title="Bar-基本示例", subtitle="我是副标题"))
     )
-    # return HttpResponse(c.render_embed())
-    c.render(path='pyecharts_demo/templates/pyecharts_demo/bar_chart.html')
-
-    return render(request, 'pyecharts_demo/bar_chart.html')
+    return HttpResponse(c.render_embed())
+    # c.render(path='pyecharts_demo/templates/pyecharts_demo/bar_chart.html')
+    #
+    # return render(request, 'pyecharts_demo/bar_chart.html')

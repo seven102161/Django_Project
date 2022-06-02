@@ -4,26 +4,19 @@ from django.urls import reverse
 from django.views import generic
 import pymongo
 
+
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 mydb = myclient["magic_shop"]
 mycol = mydb["foods"]
 
-# Create your views here.
 
+# Create your views here.
 class IndexView(generic.ListView):
     template_name = 'shop/index.html'
     context_object_name = 'product_list'
 
     def get_queryset(self):
         return mycol.find({},{"_id": 0})
-
-
-# def index(request):
-#     product_list = mycol.find({},{"_id": 0})
-#     contents = {
-#         'product_list': product_list,
-#     }
-#     return render(request, 'shop/index.html', contents)
 
 
 def detail(request, name):

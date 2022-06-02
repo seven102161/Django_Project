@@ -25,6 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_ROOT = os.path.join(BASE_DIR, 'site')
 
 urlpatterns = [
+    # path('', include('pyecharts_demo.urls')),
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),
     path('shop/', include('shop.urls')),
