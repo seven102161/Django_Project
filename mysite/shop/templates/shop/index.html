@@ -1,38 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Elaine's Shop</title>
+{% extends './base.html' %}
 
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'shop/style.css' %}">
-</head>
-<body>
-    <header>
+{% block content %}
+
+    <div class="container mx-5 px-5 text-primary text-center ">
         <h1>欢迎来到Elaine的魔法商店！</h1>
-    </header>
+    </div>
 
-    <hr>
-    <fieldset>
-        <legend><h1>小店商品</h1></legend>
-        <table>
-            <thead>
-                <tr>
-                    <th>名字</th><th>价格</th><th>评价</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for product in product_list %}
-                <tr>
-                    <td><a href="{% url 'shop:detail' product.name %}">{{ product.name }}</a></td>
-                    <td>{{ product.price }}</td>
-                    <td>{{ product.grade }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        
-        </table>
-    
-    </fieldset>
-</body>
-</html>
+    <div class="container mt-3">
+        <div class="row">
+            {% for product in product_list %}
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    {% load static %}
+                    <img src="{% static 'shop/images/food_1.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ product.name }}</h5>
+                      <p class="card-text">{{ product.price }}<br>网友评分：{{ product.grade }}</p>
+                      <a href="#" class="btn btn-primary">Great! <i class="fa-solid fa-thumbs-up"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
