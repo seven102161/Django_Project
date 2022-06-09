@@ -6,6 +6,4 @@ app_name = 'shop'
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('<str:name>', views.detail, name='detail'),
-    path('<str:name>/result/', views.result, name='result'),
-    path('<str:name>/buy/', views.buy, name='buy'),
 ]

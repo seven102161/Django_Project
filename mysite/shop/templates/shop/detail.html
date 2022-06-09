@@ -1,18 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Product_Details</title>
-</head>
-<body>
-    <form action="{% url 'shop:buy' product.name %}" method="post">
-    {% csrf_token %}
-    <fieldset>
-        <legend><h1>{{ product.name }}</h1></legend>
-        <input type="text" name="p_name" id="p_name" value="aaa">
-        <label for="p_name">{{product.price}}</label>
-    </fieldset>
-    <input type="submit" value="Vote">
-    </form>
-</body>
-</html>
+{% extends './base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <ul class="my-2">
+                <li class="my-2">商品名称： {{ name }}</li>
+                <li class="my-2">商品单价： {{ price }}</li>
+                <li class="my-2">总计： {{ total }}</li>
+                <form  class="my-2" action="" method="post">
+                    {% csrf_token %}
+                    {{ form.as_ul }}
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="确定">
+                    <a class="btn btn-danger" href="{% url 'shop:index' %}">返回</a>
+                </form>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

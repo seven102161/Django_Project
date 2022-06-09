@@ -12,11 +12,12 @@
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="card" style="width: 18rem;">
                     {% load static %}
-                    <img src="{% static 'shop/images/food_1.jpg' %}" class="card-img-top" alt="...">
+                    <img src="../../static/shop/images/food_{{ forloop.counter }}.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{ product.name }}</h5>
                       <p class="card-text">{{ product.price }}<br>网友评分：{{ product.grade }}</p>
-                      <a href="#" class="btn btn-primary">Great! <i class="fa-solid fa-thumbs-up"></i></a>
+                      <a href="#" class="btn btn-primary">收藏 <i class="fa-solid fa-thumbs-up"></i></a>
+                      <a href="{% url 'shop:detail' product.name %}" class="btn btn-primary">购买 <i class="fa-solid fa-cart-shopping"></i>"</a>
                     </div>
                 </div>
             </div>
